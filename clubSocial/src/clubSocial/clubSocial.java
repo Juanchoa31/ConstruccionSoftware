@@ -60,19 +60,19 @@ public class clubSocial extends JFrame {
 			}
 		});
 		
-		JButton btnConsultarUsuario = new JButton("Consultar usuario.");
+		JButton btnConsultarUsuario = new JButton("Check user.");
 		btnConsultarUsuario.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\searchUser.png"));
 		btnConsultarUsuario.setFont(new Font("Arial", Font.BOLD, 15));
 		btnConsultarUsuario.setBounds(129, 187, 197, 33);
 		contentPane.add(btnConsultarUsuario);
 		
-		JButton btnEliminarUsuario = new JButton("Eliminar usuario.");
+		JButton btnEliminarUsuario = new JButton("Delete user.");
 		btnEliminarUsuario.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\deleteUser.png"));
 		btnEliminarUsuario.setFont(new Font("Arial", Font.BOLD, 15));
 		btnEliminarUsuario.setBounds(129, 127, 197, 33);
 		contentPane.add(btnEliminarUsuario);
 		
-		JButton btnAgregarUsuario = new JButton("Afiliar usuario.");
+		JButton btnAgregarUsuario = new JButton("Affiliate user.");
 		btnAgregarUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
