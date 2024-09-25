@@ -13,8 +13,13 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.HeadlessException;
+
 import javax.swing.JTextField;
+import clubSocial.Partner;
 
 public class afiliacionUsuario extends JFrame {
 
@@ -22,12 +27,25 @@ public class afiliacionUsuario extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtIdSocio;
 	private JTextField txtNombreSocio;
-	private JTextField txtConsumo;
+
+	
+	
+	
+	/**
+	 * @param txtIdSocio
+	 * @param txtNombreSocio
+	 * @throws HeadlessException
+	 */
+	protected afiliacionUsuario(JTextField txtIdSocio, JTextField txtNombreSocio) throws HeadlessException {
+		super();
+		this.txtIdSocio = txtIdSocio;
+		this.txtNombreSocio = txtNombreSocio;
+	}
 
 	/**
 	 * Launch the application.
 	 */
-	ArrayList<String> socios = new ArrayList<String>();
+	ArrayList<Partner> socios = new ArrayList<Partner>();
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -72,7 +90,7 @@ public class afiliacionUsuario extends JFrame {
 				
 				txtIdSocio.setText("");
 				txtNombreSocio.setText("");
-				txtConsumo.setText("");
+				//txtConsumo.setText("");
 
 			}
 		});
@@ -84,12 +102,13 @@ public class afiliacionUsuario extends JFrame {
 		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//Socios socio = new Socios();
-				//txtIdSocios.setIdSocios(Integer.parseInt(txtIdSocios.getText().toString()));
-				//txtNombreSocio.setNombreSocio(txtNombreSocio.getText());
+				Partner socio = new Partner();
+				socio.setIdSocio(Integer.parseInt(txtIdSocio.getText().toString()));
+				socio.setNombreSocio(txtNombreSocio.getName());
 				//txtConsumo.setNombreSocio(txtNombreSocio.getText());
 				//txtAutorizados.setNombreSocio(txtNombreSocio.getText());
-				//socios.add(socio);
+				socios.add(socio);
+				JOptionPane.showMessageDialog(null, "Se agregó");
 				
 			}
 		});
@@ -124,11 +143,6 @@ public class afiliacionUsuario extends JFrame {
 		lblConsumo.setBounds(10, 73, 136, 14);
 		panelSocios.add(lblConsumo);
 		
-		txtConsumo = new JTextField();
-		txtConsumo.setColumns(10);
-		txtConsumo.setBounds(171, 70, 166, 20);
-		panelSocios.add(txtConsumo);
-		
 		JLabel lblAutorizados = new JLabel("Autorizados.");
 		lblAutorizados.setBounds(10, 101, 136, 14);
 		panelSocios.add(lblAutorizados);
@@ -137,11 +151,15 @@ public class afiliacionUsuario extends JFrame {
 		btnCrearAutorizados.setBounds(171, 101, 166, 23);
 		panelSocios.add(btnCrearAutorizados);
 		
+		JButton btnAgregarConsumos = new JButton("Agregar consumos.");
+		btnAgregarConsumos.setBounds(171, 69, 166, 23);
+		panelSocios.add(btnAgregarConsumos);
+		
 		JLabel lblAfiliados = new JLabel("Afiliación de socio.");
 		lblAfiliados.setFont(new Font("TeXGyreAdventor", Font.BOLD, 20));
 		lblAfiliados.setBounds(10, 28, 212, 39);
 		contentPane.add(lblAfiliados);
-		btnAtras.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\izquierda.png"));
+		btnAtras.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\left.png"));
 		contentPane.add(btnAtras);
 		
 		JLabel lblNewLabel = new JLabel("");

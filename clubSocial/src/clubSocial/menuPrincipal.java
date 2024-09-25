@@ -67,7 +67,7 @@ public class menuPrincipal extends JFrame {
 		btnSocios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				socios socio = new socios();
+				Socios socio = new Socios();
 				dispose();
 				socio.setVisible(true);
 				

@@ -50,7 +50,7 @@ public class clubSocial extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnAtras = new JButton("");
-		btnAtras.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\izquierda.png"));
+		btnAtras.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\left.png"));
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -60,20 +60,20 @@ public class clubSocial extends JFrame {
 			}
 		});
 		
-		JButton btnConsultarUsuario = new JButton("Check user.");
-		btnConsultarUsuario.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\searchUser.png"));
-		btnConsultarUsuario.setFont(new Font("Arial", Font.BOLD, 15));
-		btnConsultarUsuario.setBounds(129, 187, 197, 33);
-		contentPane.add(btnConsultarUsuario);
+		JButton btnCheckUser = new JButton("Check user.");
+		btnCheckUser.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\searchUser.png"));
+		btnCheckUser.setFont(new Font("Arial", Font.BOLD, 15));
+		btnCheckUser.setBounds(129, 187, 197, 33);
+		contentPane.add(btnCheckUser);
 		
-		JButton btnEliminarUsuario = new JButton("Delete user.");
-		btnEliminarUsuario.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\deleteUser.png"));
-		btnEliminarUsuario.setFont(new Font("Arial", Font.BOLD, 15));
-		btnEliminarUsuario.setBounds(129, 127, 197, 33);
-		contentPane.add(btnEliminarUsuario);
+		JButton btnDeleteUser = new JButton("Delete user.");
+		btnDeleteUser.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\deleteUser.png"));
+		btnDeleteUser.setFont(new Font("Arial", Font.BOLD, 15));
+		btnDeleteUser.setBounds(129, 127, 197, 33);
+		contentPane.add(btnDeleteUser);
 		
-		JButton btnAgregarUsuario = new JButton("Affiliate user.");
-		btnAgregarUsuario.addActionListener(new ActionListener() {
+		JButton btnAddUser = new JButton("Affiliate user.");
+		btnAddUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				afiliacionUsuario afiliacion = new afiliacionUsuario();
@@ -82,17 +82,17 @@ public class clubSocial extends JFrame {
 				
 			}
 		});
-		btnAgregarUsuario.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\addUser.png"));
-		btnAgregarUsuario.setFont(new Font("Arial", Font.BOLD, 15));
-		btnAgregarUsuario.setBounds(129, 68, 197, 33);
-		contentPane.add(btnAgregarUsuario);
+		btnAddUser.setIcon(new ImageIcon("P:\\Desktop\\Universidad\\Semestre #2\\Construcción de software 1\\Proyectos en clase\\clubSocial\\Contenido\\addUser.png"));
+		btnAddUser.setFont(new Font("Arial", Font.BOLD, 15));
+		btnAddUser.setBounds(129, 68, 197, 33);
+		contentPane.add(btnAddUser);
 		btnAtras.setBounds(369, 211, 55, 39);
 		contentPane.add(btnAtras);
 		
-		JLabel lblNewLabel = new JLabel("Club Social");
+		JLabel lblNewLabel = new JLabel("Social club.");
 		lblNewLabel.setFont(new Font("TeXGyreAdventor", Font.BOLD, 30));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 11, 164, 39);
+		lblNewLabel.setBounds(10, 18, 190, 39);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
