@@ -12,7 +12,6 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Toolkit;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class menuPrincipal extends JFrame {
@@ -50,43 +49,31 @@ public class menuPrincipal extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JButton btnConsumo = new JButton("Consumos");
-		btnConsumo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				consumos consumo = new consumos();
-				dispose();
-				consumo.setVisible(true);
-				
-			}
-		});
+		btnConsumo.addActionListener((ActionEvent e) -> {
+                    consumos consumo = new consumos();
+                    dispose();
+                    consumo.setVisible(true);
+                });
 		btnConsumo.setFont(new Font("Arial", Font.BOLD, 15));
 		btnConsumo.setBounds(86, 282, 308, 57);
 		contentPane.add(btnConsumo);
 		
 		JButton btnSocios = new JButton("Socios");
-		btnSocios.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Socios socio = new Socios();
-				dispose();
-				socio.setVisible(true);
-				
-			}
-		});
+		btnSocios.addActionListener((ActionEvent e) -> {
+                    Socios socio = new Socios();
+                    dispose();
+                    socio.setVisible(true);
+                });
 		btnSocios.setFont(new Font("Arial", Font.BOLD, 15));
 		btnSocios.setBounds(86, 190, 308, 57);
 		contentPane.add(btnSocios);
 		
 		JButton btnClub = new JButton("Club Social");
-		btnClub.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				clubSocial club = new clubSocial();
-				dispose();
-				club.setVisible(true);
-				
-			}
-		});
+		btnClub.addActionListener((ActionEvent e) -> {
+                    clubSocial club = new clubSocial();
+                    dispose();
+                    club.setVisible(true);
+                });
 		btnClub.setFont(new Font("Arial", Font.BOLD, 15));
 		btnClub.setBounds(86, 107, 308, 57);
 		contentPane.add(btnClub);
