@@ -12,22 +12,20 @@ import java.awt.event.ActionEvent;
 public class Socios extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+	private final JPanel contentPane;
 
 	/**
 	 * Launch the application.
+     * @param args
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Socios frame = new Socios();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		EventQueue.invokeLater(() -> {
+                    try {
+                        Socios frame = new Socios();
+                        frame.setVisible(true);
+                    } catch (Exception e) {
+                    }
+                });
 	}
 
 	/**
@@ -43,14 +41,11 @@ public class Socios extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Volver...");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				menuPrincipal menu = new menuPrincipal();
-				dispose();
-				menu.setVisible(true);
-			}
-		});
+		btnNewButton.addActionListener((ActionEvent e) -> {
+                    menuPrincipal menu = new menuPrincipal();
+                    dispose();
+                    menu.setVisible(true);
+                });
 		btnNewButton.setBounds(170, 95, 89, 23);
 		contentPane.add(btnNewButton);
 		setLocationRelativeTo(null);
