@@ -15,9 +15,11 @@ public class HandleException {
         checkAge(age);
         
         }catch(InvalidAgeException x){
-            System.out.println("Error: "+x.getMessage());
+            System.err.println("Error: "+x.getMessage());
+        }catch(Exception e){
+            System.err.println("Error inesperado: " + e.getMessage());
         }finally{
-            System.out.println("Bloque de codigo comprobado");
+            System.err.println("Bloque de codigo comprobado");
         }
     }
     public static void checkAge(int age)throws InvalidAgeException{
