@@ -83,7 +83,6 @@ public class FileProject {
         if (!recordLine.contains("USERNAME")){
             String[] records = recordLine.split(",");
             User user = new User(records[0], records[1],records[2]);
-            
             users.add(user);
         }
     }
