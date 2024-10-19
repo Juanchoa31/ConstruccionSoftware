@@ -9,7 +9,7 @@ public class HandleException {
         try{
                    
         Scanner teclado = new Scanner(System.in);
-        System.out.print("Ingrese un edad: ");
+        System.out.print("Ingrese una edad aleatoria edad: ");
         
         int age = teclado.nextInt();
         checkAge(age);
