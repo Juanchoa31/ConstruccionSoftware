@@ -1,6 +1,7 @@
 package ui.forms.dialogs;
 import com.mycompany.interfacesgraficas.*;
 import javax.swing.JOptionPane;
+import ui.forms.HomeViewForm;
 
 public class UserDialogForm extends javax.swing.JDialog {
 
@@ -99,7 +100,8 @@ public class UserDialogForm extends javax.swing.JDialog {
         User user = new User(fullName, email, phoneNumber);
         
         JOptionPane.showMessageDialog(this, "Datos guardados  \n" + user.getInfo());
-        this.setVisible(false);    
+        HomeViewForm.users.add(user);
+        this.dispose();    
     }//GEN-LAST:event_saveBtnActionPerformed
 
     /**

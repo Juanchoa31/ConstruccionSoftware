@@ -6,7 +6,7 @@ import com.mycompany.interfacesgraficas.*;
 
 public class HomeViewForm extends javax.swing.JFrame {
     
-    public static ArrayList<User> users = new ArrayList<User>();
+    public static ArrayList<User> users = new ArrayList<>();
 
     /**
      * Creates new form HomeInterfaceForm
@@ -14,7 +14,7 @@ public class HomeViewForm extends javax.swing.JFrame {
     public HomeViewForm() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,6 +26,9 @@ public class HomeViewForm extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        userCombo = new javax.swing.JComboBox<>();
+        refreshUsers = new javax.swing.JButton();
         homeMenuBar = new javax.swing.JMenuBar();
         usersMenu = new javax.swing.JMenu();
         newMenuUserItem = new javax.swing.JMenuItem();
@@ -36,8 +39,17 @@ public class HomeViewForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Bienvenido!");
+        jLabel1.setText("Club.");
+
+        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel2.setText("Usuarios.");
+
+        refreshUsers.setText("Actualizar");
+        refreshUsers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshUsersActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -45,15 +57,28 @@ public class HomeViewForm extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(userCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(refreshUsers))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(userCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(refreshUsers)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         usersMenu.setText("Usuarios");
@@ -94,6 +119,12 @@ public class HomeViewForm extends javax.swing.JFrame {
         udf.setLocationRelativeTo(null);
     }//GEN-LAST:event_newMenuUserItemActionPerformed
 
+    private void refreshUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshUsersActionPerformed
+        for(User user : users){
+            this.userCombo.addItem(user.getInfo());
+        }      
+    }//GEN-LAST:event_refreshUsersActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -133,9 +164,12 @@ public class HomeViewForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar homeMenuBar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem newMenuUserItem;
+    private javax.swing.JButton refreshUsers;
+    private javax.swing.JComboBox<String> userCombo;
     private javax.swing.JMenu usersMenu;
     // End of variables declaration//GEN-END:variables
 }
