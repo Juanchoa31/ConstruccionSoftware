@@ -56,6 +56,6 @@ public class User {
     }
     
     public String getInfo(){
-        return this.getFullName() + " ; " + this.getEmail();
+        return this.getFullName() + " - " + this.getEmail();
     }
 }

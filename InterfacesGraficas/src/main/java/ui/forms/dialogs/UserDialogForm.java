@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 import ui.forms.HomeViewForm;
 
 public class UserDialogForm extends javax.swing.JDialog {
+    final int USER_MAX = 35;
 
     /**
      * Creates new form UserDialogForm
@@ -93,15 +94,15 @@ public class UserDialogForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-        String fullName = fullNameTxt.getText();
-        String email = emailTxt.getText();
-        String phoneNumber = phoneNumberTxt.getText();
+            String fullName = fullNameTxt.getText();
+            String email = emailTxt.getText();
+            String phoneNumber = phoneNumberTxt.getText();
         
-        User user = new User(fullName, email, phoneNumber);
+            User user = new User(fullName, email, phoneNumber);
         
-        JOptionPane.showMessageDialog(this, "Datos guardados  \n" + user.getInfo());
-        HomeViewForm.users.add(user);
-        this.dispose();    
+            JOptionPane.showMessageDialog(this, "Datos guardados  \n" + user.getInfo());
+            HomeViewForm.users.add(user);
+            this.dispose();
     }//GEN-LAST:event_saveBtnActionPerformed
 
     /**
