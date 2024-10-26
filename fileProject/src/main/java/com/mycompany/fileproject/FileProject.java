@@ -7,17 +7,20 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Random;
+//import java.util.Scanner;
 import javax.swing.JOptionPane;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class FileProject {
     public static ArrayList<User> users = new ArrayList<>();
     public static void main(String[] args) throws IOException {
-        Scanner teclado = new Scanner (System.in);
+        //Scanner teclado = new Scanner (System.in);
+        Random random = new Random();
+        int numeroAleatorio = random.nextInt(10); // Genera un número aleatorio entre 0 y 9999
         
-        String fileName = JOptionPane.showInputDialog("Ingrese el nombre del archivo con su extensión");
-        String path = "./" + fileName;
+        String fileName = "archive" + numeroAleatorio;
+        String path = "./" + fileName + ".csv";  
         
         String opcion = selectMenuOption();
         
@@ -66,7 +69,7 @@ public class FileProject {
         }
         br.close();
         for(User user : users){
-            System.err.println(user.getInfo());
+            System.out.println(user.getInfo());
         }
     }
     
