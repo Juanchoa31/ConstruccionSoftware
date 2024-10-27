@@ -8,14 +8,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-//import java.util.Scanner;
 import javax.swing.JOptionPane;
-//import java.util.Arrays;
 
 public class FileProject {
-    public static ArrayList<User> users = new ArrayList<>();
+    public static ArrayList<UserBill> users = new ArrayList<>();
     public static void main(String[] args) throws IOException {
-        //Scanner teclado = new Scanner (System.in);
         Random random = new Random();
         int numeroAleatorio = random.nextInt(10); // Genera un número aleatorio entre 0 y 9999
         
@@ -68,7 +65,7 @@ public class FileProject {
             loadUserCollection(line);
         }
         br.close();
-        for(User user : users){
+        for(UserBill user : users){
             System.out.println(user.getInfo());
         }
     }
@@ -85,7 +82,7 @@ public class FileProject {
     public static void loadUserCollection(String recordLine){
         if (!recordLine.contains("USERNAME")){
             String[] records = recordLine.split(",");
-            User user = new User(records[0], records[1],records[2]);
+            UserBill user = new UserBill(records[0], records[1],records[2]);
             users.add(user);
         }
     }
