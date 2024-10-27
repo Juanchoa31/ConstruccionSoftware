@@ -54,8 +54,6 @@ public class UserBill {
     }
     
     public String getInfo(){
-            
-        //return this.getUserName() + " - " + this.getFullName() + " - " + this.getEmail();
         return this.getAlias() + " - " + this.getName() + " - " + this.getEmail();
     }
 }

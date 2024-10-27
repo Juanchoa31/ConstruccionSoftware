@@ -5,22 +5,13 @@ import com.mycompany.fileproject.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class HomeViewForm extends javax.swing.JFrame {
+public class HomeViewFormBill extends javax.swing.JFrame {
 
     public static ArrayList<UserBill> bills = new ArrayList<>(); 
-    Random random = new Random();
-    int numeroAleatorio = random.nextInt(10); // Genera un número aleatorio entre 0 y 9999
-        
-    String fileName = "archive" + numeroAleatorio;
-    String path = "./" + fileName + ".csv";  
-    
-    
-    public HomeViewForm() {
+
+    public HomeViewFormBill() {
         initComponents();
     }
 
@@ -92,13 +83,7 @@ public class HomeViewForm extends javax.swing.JFrame {
     }
     
     private void newMenuUserItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newMenuUserItemActionPerformed
-
-        try {        
-            createFile(path);
-        } catch (IOException ex) {
-            Logger.getLogger(HomeViewForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        UserDialogForm udf = new UserDialogForm(this, true);
+        UserDialogFormBill udf = new UserDialogFormBill(this, true);
         udf.setVisible(true);
         udf.setLocationRelativeTo(null);
     }//GEN-LAST:event_newMenuUserItemActionPerformed
@@ -120,20 +105,21 @@ public class HomeViewForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomeViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeViewFormBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomeViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeViewFormBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomeViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeViewFormBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HomeViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeViewFormBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomeViewForm().setVisible(true);
+                new HomeViewFormBill().setVisible(true);
             }
         });
     }
