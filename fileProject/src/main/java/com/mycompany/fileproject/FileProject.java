@@ -79,11 +79,11 @@ public class FileProject {
         return JOptionPane.showInputDialog(menuTemplate);    
     }
     
-    public static void loadUserCollection(String recordLine){
-        if (!recordLine.contains("USERNAME")){
-            String[] records = recordLine.split(",");
-            UserBill user = new UserBill(records[0], records[1],records[2]);
-            users.add(user);
+        public static void loadUserCollection(String recordLine){
+            if (!recordLine.contains("USERNAME")){
+                String[] records = recordLine.split(",");
+                UserBill user = new UserBill(records[0], records[1],records[2]);
+                users.add(user);
+            }
         }
-    }
 }

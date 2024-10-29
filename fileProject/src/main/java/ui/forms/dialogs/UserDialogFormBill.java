@@ -10,13 +10,14 @@ import java.util.logging.Logger;
 
 public class UserDialogFormBill extends javax.swing.JDialog {
     
-    UbicationArchive ubication = new UbicationArchive();
+    LocationArchive ubication = new LocationArchive();
     String fileName = ubication.getFileName();
     String path = ubication.getPath();
     
     public UserDialogFormBill(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -99,16 +100,24 @@ public class UserDialogFormBill extends javax.swing.JDialog {
 
     public void writeTextToFile(String path) throws IOException{
         File file = new File(path);
-        FileWriter fr = new FileWriter(file, true);
-
-        String alias = aliasTxt.getText();
-        String name = nameTxt.getText();
-        String email = emailTxt.getText();
         
-        String lineCSV = String.join(",",alias, name, email);
+        boolean emptyFile = !file.exists() || file.length()==0;
+        
+        try(FileWriter fr = new FileWriter(file, true)){
+            if (emptyFile){
+                fr.append("Alias,Nombre,Email\n");
+            }
+            
+            String alias = aliasTxt.getText();
+            String name = nameTxt.getText();
+            String email = emailTxt.getText();
+            
+            
+            String lineCSV = String.join(",",alias, name, email);
 
         fr.append(lineCSV + "\n");
-        fr.close();
+        fr.close();            
+        }
     }
     
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed

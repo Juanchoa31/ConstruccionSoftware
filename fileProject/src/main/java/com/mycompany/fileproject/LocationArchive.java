@@ -2,15 +2,12 @@ package com.mycompany.fileproject;
 
 import java.util.Random;
 
-public class UbicationArchive {
+public class LocationArchive {
     private String fileName;
     private String path;
 
-    public UbicationArchive() {
-        Random random = new Random();
-        int numeroAleatorio = random.nextInt(10);
-        
-        fileName = "archive" + numeroAleatorio;
+    public LocationArchive() { 
+        fileName = "archive6";
         path = "archives/" + fileName + ".csv";
     }
     
